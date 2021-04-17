@@ -1,12 +1,12 @@
 {"intents": [
     {"tag": "greeting",
-     "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-     "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+     "patterns": ["Hi there", "Is anyone there?","Hey","Hola", "Hello", "Good day","Namaste","Namashkar"],
+     "responses": ["Hello", "Good to see you again", "Hi there, how can I help?","Namaste", "Namashkar"],
      "context": [""]
     },
     {"tag": "goodbye",
-     "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-     "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+     "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time", "tata"],
+     "responses": ["See you!", "Have a nice day", "Bye! Come back again soon.","bye bye"],
      "context": [""]
     },
     {"tag": "thanks",
@@ -16,58 +16,80 @@
     },
     {"tag": "open",
     "patterns": ["open application", "start", "open", "start application"],
-    "responses": ["what aaplication"],
+    "responses": ["what aaplication", "which application do you want to open or start?", "yes, sure, what aaplication?"],
     "context": ["open"]
     },
     {"tag": "start chrome",
     "patterns": ["start chrome", "start chrome browser", "open chrome", "open chrome browser"],
-    "responses": ["opening chrome"]
+    "responses": ["opening chrome"],
+    "context": [""]
     },
     {"tag": "start incognito",
     "patterns": ["start incognito", "start incognito browser", "open incognito", "open incognito browser"],
-    "responses": ["opening chrome in incognito"]
+    "responses": ["opening chrome in incognito"],
+    "context": [""]
     },
     {"tag": "incognito",
     "patterns": ["incognito", "incognito chrome", "private browser", "open incognito mode", "start incognito mode"],
     "responses": ["starting chrome in incognito mode"],
-    "context_filter": ["open"]
+    "context_filter": ["open"],
+    "context": [""]
     },
     {"tag": "chrome",
     "patterns": ["chrome", "browser", "start chrome browser", "open chrome browser"],
     "responses": ["starting chrome"],
-    "context_filter": ["open"]
+    "context_filter": ["open"],
+    "context": [""]
     },
     {"tag": "chrome",
     "patterns": ["chrome", "chrome browser"],
-    "responses": ["It is an application to browse web sites"]
+    "responses": ["It is an application to browse web sites"],
+    "context": [""]
     },
     {"tag": "incognito",
     "patterns": ["incognito", "incognito chrome", "private browser"],
-    "responses": ["It is an application to browse private web sites"]
+    "responses": ["It is an application to browse private web sites"],
+    "context": [""]
     },
 
     {"tag": "noanswer",
     "patterns": [],
-    "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"]
+    "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+    "context": [""]
     },
     {"tag": "date",
     "patterns": ["what is today's date", "date"],
-    "responses": ["date is ","todays date is "]
+    "responses": ["date is ","todays date is "],
+    "context": [""]
     },
     {"tag": "terminal",
     "patterns": ["can you start terminal", "can you open terminal","open terminal", "terminal"],
-    "responses": ["here you go","yes buddy"]
+    "responses": ["here you go","yes buddy"],
+    "context": [""]
     },
     {"tag": "gedit",
     "patterns": ["open note pad", "open gedit"],
-    "responses": ["here you go","yes buddy"]
+    "responses": ["here you go","yes buddy"],
+    "context": [""]
     },
     {"tag": "hand_app",
     "patterns": ["open hand app", "hand gesture recognition", "hand gesture AI"],
-    "responses": ["here you go","yes buddy", "yes enjoy"]
+    "responses": ["here you go","yes buddy", "yes enjoy"],
+    "context": [""]
     },
     {"tag": "joke",
     "patterns": ["tell me a joke", "what about a joke", "new joke", "joke"],
-    "responses": ["here you go","yes buddy", "yes enjoy"]
+    "responses": ["here you go","yes buddy", "yes enjoy"],
+    "context": [""]
+    },
+    {"tag": "Akshay",
+    "patterns": ["who is akshay", "what about akshay", "new akshay", "who has created this application","who is creator of this chabot"],
+    "responses": ["he is Akshay, he is the greatest person on planet","he is Akshay, he is data scientist", "His Name is Akshay"],
+    "context": [""]
+    },
+    {"tag": "help",
+    "patterns": ["what can you do for me?", "what is your purpose", "what can you do", "what are your capabilities","how can you help me"],
+    "responses": ["I can do various tasks for you for example \n opening terminal, browser, telling jokes, opening local applications etc"],
+    "context": [""]
     }
 ]}

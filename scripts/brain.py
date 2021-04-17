@@ -61,11 +61,13 @@ def _bag_of_words(sentence, words):
 def _predict_class(sentence):
     p = _bag_of_words(sentence, words)
     res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.3
+    ERROR_THRESHOLD = 0.95
     results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
-    if len(results)==0:
-        results="Dont know what you are talking about"
-    results.sort(key=lambda x: x[1], reverse=True)
+    
+    if len(results)==0  and not results:
+        pass
+    else:
+        results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
     for r in results:
         return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
@@ -75,29 +77,36 @@ def _predict_class(sentence):
 
 
 
-def _get_response(message, intents, userID='123', show_details=False):
-     ints = _predict_class(message)
-     results = ints
-     while results:
-            for i in intents['intents']:
-                # find a tag matching the first result
-                if i['tag'] == results[0]['intent']:
-                    # set context for this intent if necessary
+def _get_response(message, intents, userID='123', show_details=True):
+    ints = _predict_class(message)
+    results = ints
+    while results:
+        for i in intents['intents']:
+            # find a tag matching the first result
+            if i['tag'] == results[0]['intent']:
+                # set context for this intent if necessary
+                # if 'context' in i:
+                #     if show_details: print ('context:', i['context'])
+                #     context[userID] = i['context']
+
+                # check if this intent is contextual and applies to this user's conversation
+                if not 'context_filter' in i or (userID in context and 'context_filter' in i and i['context_filter'] == context[userID]):
                     if 'context' in i:
                         if show_details: print ('context:', i['context'])
                         context[userID] = i['context']
+                    
+                    
+                    if show_details: print ('tag:', i['tag'])
+                    # a random response from the intent
+                    #print("inside",results[0]['intent'])
+                    response = random.choice(i['responses'])
 
-                    # check if this intent is contextual and applies to this user's conversation
-                    if not 'context_filter' in i or (userID in context and 'context_filter' in i and i['context_filter'] == context[userID]):
-                        if show_details: print ('tag:', i['tag'])
-                        # a random response from the intent
-                        print("inside",results[0]['intent'])
-                        response = random.choice(i['responses'])
+                    response = run_commands(response,results[0]['intent'])
 
-                        response = run_commands(response,results[0]['intent'])
-
-                        return (response)
-            results.pop(0)
+                    return (response)
+        results.pop(0)
+    err = ["I dont know what you are talking about", "I did not understand", "are you drunk???","what do you mean??", "what does that mean??"]
+    return(random.choice(err))
 
 def main(message):
     return(_get_response(message, intents))

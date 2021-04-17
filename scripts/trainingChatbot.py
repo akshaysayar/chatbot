@@ -10,7 +10,7 @@ from tensorflow.keras.optimizers import SGD
 
 def main():
     os.chdir(os.path.join(os.path.split(os.path.abspath(__file__))[0],".."))
-
+    
     lemmatizer = WordNetLemmatizer()
 
     intents = json.loads(open('data/intents.json').read())
@@ -35,8 +35,6 @@ def main():
 
     classes = sorted(set(classes))
 
-    pickle.dump(words, open('words.pkl', 'wb'))
-    pickle.dump(classes, open('classes.pkl', 'wb'))
 
     training = []
     output_empty = [0] * len(classes)
@@ -78,5 +76,5 @@ def main():
     pickle.dump(classes, open('models/classes.pkl', 'wb'))
 
 
-if __name__=="main":
+if __name__=="__main__":
     main()
