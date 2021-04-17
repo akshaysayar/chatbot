@@ -1,0 +1,73 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+     "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+     "context": [""]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+     "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+     "context": [""]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure"],
+     "context": [""]
+    },
+    {"tag": "open",
+    "patterns": ["open application", "start", "open", "start application"],
+    "responses": ["what aaplication"],
+    "context": ["open"]
+    },
+    {"tag": "start chrome",
+    "patterns": ["start chrome", "start chrome browser", "open chrome", "open chrome browser"],
+    "responses": ["opening chrome"]
+    },
+    {"tag": "start incognito",
+    "patterns": ["start incognito", "start incognito browser", "open incognito", "open incognito browser"],
+    "responses": ["opening chrome in incognito"]
+    },
+    {"tag": "incognito",
+    "patterns": ["incognito", "incognito chrome", "private browser", "open incognito mode", "start incognito mode"],
+    "responses": ["starting chrome in incognito mode"],
+    "context_filter": ["open"]
+    },
+    {"tag": "chrome",
+    "patterns": ["chrome", "browser", "start chrome browser", "open chrome browser"],
+    "responses": ["starting chrome"],
+    "context_filter": ["open"]
+    },
+    {"tag": "chrome",
+    "patterns": ["chrome", "chrome browser"],
+    "responses": ["It is an application to browse web sites"]
+    },
+    {"tag": "incognito",
+    "patterns": ["incognito", "incognito chrome", "private browser"],
+    "responses": ["It is an application to browse private web sites"]
+    },
+
+    {"tag": "noanswer",
+    "patterns": [],
+    "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"]
+    },
+    {"tag": "date",
+    "patterns": ["what is today's date", "date"],
+    "responses": ["date is ","todays date is "]
+    },
+    {"tag": "terminal",
+    "patterns": ["can you start terminal", "can you open terminal","open terminal", "terminal"],
+    "responses": ["here you go","yes buddy"]
+    },
+    {"tag": "gedit",
+    "patterns": ["open note pad", "open gedit"],
+    "responses": ["here you go","yes buddy"]
+    },
+    {"tag": "hand_app",
+    "patterns": ["open hand app", "hand gesture recognition", "hand gesture AI"],
+    "responses": ["here you go","yes buddy", "yes enjoy"]
+    },
+    {"tag": "joke",
+    "patterns": ["tell me a joke", "what about a joke", "new joke", "joke"],
+    "responses": ["here you go","yes buddy", "yes enjoy"]
+    }
+]}

@@ -1,0 +1,13 @@
+json
+time
+difflib
+tkintertable
+opencv-python
+mediapipe
+pickle
+pandas
+random
+nltk
+tensorflow
+os
+pyjokes
