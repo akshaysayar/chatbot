@@ -1,13 +1,7 @@
-json
-time
-difflib
-tkintertable
 opencv-python
 mediapipe
-pickle
+pickle5
 pandas
-random
 nltk
 tensorflow
-os
 pyjokes
